@@ -1,27 +1,27 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React from 'react';
 import { 
   X, 
   ExternalLink, 
   CheckCircle2, 
   MapPin, 
-  ArrowLeft, 
-  Sparkles,
   Store,
-  Compass,
-  GraduationCap
+  Palmtree
 } from 'lucide-react';
 import { ServiceCard } from '../types';
 
 interface ServiceDetailModalProps {
   service: ServiceCard | null;
   onClose: () => void;
-  onOpenPostAd: () => void;
 }
 
 export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({ 
   service, 
-  onClose,
-  onOpenPostAd
+  onClose
 }) => {
   if (!service) return null;
 
@@ -42,8 +42,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
         <div className="flex items-center gap-3 mb-6">
           <div className="w-12 h-12 rounded-2xl bg-black/40 border border-[#E5A93C]/30 flex items-center justify-center text-[#F59E0B]">
             {service.id === 'souq' && <Store className="w-6 h-6 text-[#FBBF24]" />}
-            {service.id === 'tourism' && <Compass className="w-6 h-6 text-[#34D399]" />}
-            {service.id === 'edu' && <GraduationCap className="w-6 h-6 text-[#38BDF8]" />}
+            {service.id === 'ouedna-tour' && <Palmtree className="w-6 h-6 text-[#FB923C]" />}
           </div>
           <div>
             <div className="flex items-center gap-2">
@@ -85,25 +84,15 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
           <span className="font-bold text-white text-[11px]">{service.metrics}</span>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center gap-3">
-          <button
-            onClick={() => {
-              onClose();
-              onOpenPostAd();
-            }}
-            className="w-full sm:flex-1 py-3 px-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs sm:text-sm border border-white/15 transition-colors cursor-pointer flex items-center justify-center gap-2"
-          >
-            <span>أضف إعلانك في {service.name}</span>
-          </button>
-
+        {/* Action Button: Direct visit */}
+        <div className="flex items-center gap-3">
           <a
             href={service.link}
             target="_blank"
             rel="noreferrer"
-            className="w-full sm:flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-[#F59E0B] via-[#E5A93C] to-[#D97706] text-[#140C07] font-bold text-xs sm:text-sm shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#F59E0B] via-[#E5A93C] to-[#D97706] text-[#140C07] font-bold text-sm shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>زيارة البوابة ({service.subdomain})</span>
+            <span>زيارة البوابة المباشرة ({service.subdomain})</span>
             <ExternalLink className="w-4 h-4" />
           </a>
         </div>

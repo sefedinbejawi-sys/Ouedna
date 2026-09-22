@@ -4,7 +4,7 @@ export interface ServiceCard {
   name: string;
   badge: string;
   description: string;
-  theme: 'gold' | 'emerald' | 'amber';
+  theme: 'gold' | 'emerald' | 'amber' | 'desert';
   icon: string;
   highlights: string[];
   metrics: string;
@@ -23,6 +23,7 @@ export interface SearchResult {
   location: string;
   date: string;
   badge?: string;
+  url?: string;
 }
 
 export interface Sponsor {

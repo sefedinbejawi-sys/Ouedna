@@ -89,8 +89,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <a
-                  href="#ecosystem"
-                  onClick={() => onNavigateSection('ecosystem')}
+                  href="https://souq.myeloued.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-[#FBBF24] flex items-center justify-between group"
                 >
                   <span>سوق الوادي (التجارة والتمور)</span>
@@ -99,22 +100,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
               </li>
               <li>
                 <a
-                  href="#ecosystem"
-                  onClick={() => onNavigateSection('ecosystem')}
-                  className="hover:text-[#34D399] flex items-center justify-between group"
+                  href="https://ouedna.myeloued.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#FB923C] flex items-center justify-between group"
                 >
-                  <span>دليل سوف 360 (السياحة والغيطان)</span>
-                  <span className="text-[10px] text-white/40 group-hover:text-[#34D399] font-mono">tour.myeloued.com</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#ecosystem"
-                  onClick={() => onNavigateSection('ecosystem')}
-                  className="hover:text-[#38BDF8] flex items-center justify-between group"
-                >
-                  <span>الخدمات المدرسية (دعم ودروس)</span>
-                  <span className="text-[10px] text-white/40 group-hover:text-[#38BDF8] font-mono">edu.myeloued.com</span>
+                  <span>منصة وادنا السياحية (رحلات ومخيمات)</span>
+                  <span className="text-[10px] text-white/40 group-hover:text-[#FB923C] font-mono">ouedna.myeloued.com</span>
                 </a>
               </li>
               <li>
