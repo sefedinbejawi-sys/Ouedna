@@ -84,30 +84,30 @@ export const EcosystemGrid: React.FC<EcosystemGridProps> = ({
   };
 
   return (
-    <section id="ecosystem" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#120B06] overflow-hidden">
+    <section id="ecosystem" className="relative py-16 sm:py-24 px-3 sm:px-6 lg:px-8 bg-[#120B06] overflow-hidden">
       {/* خلفيات ضوئية ناعمة تحاكي غروب وواحات وادي سوف */}
       <div className="absolute top-12 right-1/4 w-[420px] h-[420px] bg-[#F59E0B]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-16 left-1/4 w-[420px] h-[420px] bg-[#EA580C]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* عنوان وقسم رأس المنظومة */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#241309] border border-[#E5A93C]/35 text-[#FDE68A] text-xs sm:text-sm font-semibold mb-4 shadow-md">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 px-2">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1 sm:py-1.5 rounded-full bg-[#241309] border border-[#E5A93C]/35 text-[#FDE68A] text-xs sm:text-sm font-semibold mb-3 sm:mb-4 shadow-md">
             <Sparkles className="w-3.5 h-3.5 text-[#F59E0B]" />
             <span>بوابات وادنا الرقمية</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-3 sm:mb-4">
             بوابات ذكية تُغطي <span className="bg-gradient-to-r from-[#FDE68A] via-[#F59E0B] to-[#F97316] bg-clip-text text-transparent">تجارة وسياحة سوف</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed text-balance">
+          <p className="text-xs sm:text-base md:text-lg text-white/70 font-normal leading-relaxed text-balance">
             منظومة رقمية ترتبط بنطاقاتنا الفرعية المباشرة؛ تجمع بين تجارة التمور والسيارات والعقارات بسوق الوادي، والرحلات الاستكشافية وحجوزات الكثبان والغيطان عبر منصة وادنا السياحية.
           </p>
         </div>
 
         {/* شبكة البطاقات الزجاجية المتناسقة (عمودان على الشاشات المتوسطة والكبيرة) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 max-w-5xl mx-auto">
           {services.map((service) => {
             const isHovered = hoveredCard === service.id;
             const styles = getThemeStyles(service.theme, isHovered);
@@ -117,17 +117,17 @@ export const EcosystemGrid: React.FC<EcosystemGridProps> = ({
                 key={service.id}
                 onMouseEnter={() => setHoveredCard(service.id)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className={`group relative flex flex-col justify-between rounded-3xl p-7 transition-all duration-300 border ${styles.cardBg} ${styles.border} ${styles.glow}`}
+                className={`group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-7 transition-all duration-300 border ${styles.cardBg} ${styles.border} ${styles.glow}`}
               >
                 {/* تدرج لوني خفيف داخل البطاقة الزجاجية */}
                 <div 
-                  className={`absolute inset-0 rounded-3xl bg-gradient-to-b ${service.gradientBg} pointer-events-none opacity-80`} 
+                  className={`absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-b ${service.gradientBg} pointer-events-none opacity-80`} 
                 />
 
                 <div className="relative z-10">
                   {/* رأس البطاقة: الأيقونة ورابط النطاق الفرعي المباشر */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className={`w-16 h-16 rounded-2xl p-3 flex items-center justify-center border shadow-inner transition-transform duration-300 group-hover:scale-105 ${styles.iconContainer}`}>
+                  <div className="flex items-start justify-between mb-4 sm:mb-6">
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 flex items-center justify-center border shadow-inner transition-transform duration-300 group-hover:scale-105 ${styles.iconContainer}`}>
                       {renderServiceIcon(service.id)}
                     </div>
 
@@ -135,34 +135,34 @@ export const EcosystemGrid: React.FC<EcosystemGridProps> = ({
                       href={service.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-medium border transition-colors ${styles.subdomainBadge}`}
+                      className={`inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-mono font-medium border transition-colors ${styles.subdomainBadge}`}
                       title={`زيارة ${service.subdomain}`}
                     >
                       <span dir="ltr">{service.subdomain.replace('https://', '').replace('/', '')}</span>
-                      <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
+                      <ExternalLink className="w-3 h-3 opacity-70 group-hover:opacity-100" />
                     </a>
                   </div>
 
                   {/* الشارة والعنوان */}
-                  <div className="mb-4">
-                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold border mb-2.5 ${styles.badgeBg}`}>
+                  <div className="mb-3 sm:mb-4">
+                    <span className={`inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold border mb-2 ${styles.badgeBg}`}>
                       {service.badge}
                     </span>
-                    <h3 className="text-2xl font-black text-white group-hover:text-[#FBBF24] transition-colors leading-tight">
+                    <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-[#FBBF24] transition-colors leading-tight">
                       {service.name}
                     </h3>
                   </div>
 
                   {/* الوصف */}
-                  <p className="text-sm text-white/80 leading-relaxed mb-6 font-normal">
+                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed mb-4 sm:mb-6 font-normal">
                     {service.description}
                   </p>
 
                   {/* قائمة المزايا السريعة */}
-                  <div className="space-y-2.5 mb-6 border-t border-white/10 pt-5">
+                  <div className="space-y-2 sm:space-y-2.5 mb-5 sm:mb-6 border-t border-white/10 pt-4 sm:pt-5">
                     {service.highlights.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-white/85">
-                        <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${styles.accentText}`} />
+                      <div key={idx} className="flex items-start gap-2 sm:gap-2.5 text-xs sm:text-sm text-white/85">
+                        <CheckCircle2 className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 mt-0.5 ${styles.accentText}`} />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -170,13 +170,13 @@ export const EcosystemGrid: React.FC<EcosystemGridProps> = ({
                 </div>
 
                 {/* أسفل البطاقة: الإحصائيات وزر الانتقال المباشر للنطاق الفرعي */}
-                <div className="relative z-10 pt-4 border-t border-white/10 flex flex-col gap-3">
-                  <div className="flex items-center justify-between text-xs text-white/60">
+                <div className="relative z-10 pt-3 sm:pt-4 border-t border-white/10 flex flex-col gap-2.5 sm:gap-3">
+                  <div className="flex items-center justify-between text-[11px] sm:text-xs text-white/60">
                     <span className="flex items-center gap-1 font-medium">
                       <TrendingUp className="w-3.5 h-3.5 text-[#34D399]" />
                       <span>{service.metrics}</span>
                     </span>
-                    <span className="text-[11px] text-white/40">تحديث فوري</span>
+                    <span className="text-[10px] sm:text-[11px] text-white/40">تحديث فوري</span>
                   </div>
 
                   {/* زر التوجيه المباشر للنطاق الفرعي target="_blank" */}
@@ -185,7 +185,7 @@ export const EcosystemGrid: React.FC<EcosystemGridProps> = ({
                       href={service.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`w-full py-3 px-4 rounded-xl font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${styles.ctaBtn}`}
+                      className={`w-full py-2.5 sm:py-3 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${styles.ctaBtn}`}
                     >
                       <span>{service.ctaText}</span>
                       <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -195,7 +195,7 @@ export const EcosystemGrid: React.FC<EcosystemGridProps> = ({
                       <button
                         type="button"
                         onClick={() => onSelectServiceModal(service)}
-                        className="w-full py-2 text-center text-xs text-white/50 hover:text-white transition-colors cursor-pointer"
+                        className="w-full py-1.5 text-center text-[11px] sm:text-xs text-white/50 hover:text-white transition-colors cursor-pointer"
                       >
                         عرض تفاصيل البوابة
                       </button>
@@ -208,11 +208,11 @@ export const EcosystemGrid: React.FC<EcosystemGridProps> = ({
         </div>
 
         {/* تنويه التراث والخصوصية الفلاحية لولاية الوادي */}
-        <div className="mt-14 max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-[#2B170B]/70 via-[#1F1007]/80 to-[#2B170B]/70 border border-[#E5A93C]/25 p-5 text-center backdrop-blur-md">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-xs sm:text-sm text-[#FDE68A]">
+        <div className="mt-10 sm:mt-14 max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-[#2B170B]/70 via-[#1F1007]/80 to-[#2B170B]/70 border border-[#E5A93C]/25 p-4 sm:p-5 text-center backdrop-blur-md">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm text-[#FDE68A]">
             <span className="w-2 h-2 rounded-full bg-[#10B981] animate-ping shrink-0" />
             <span className="font-semibold shrink-0">معلومة سوفية:</span>
-            <span className="text-white/80 leading-relaxed">
+            <span className="text-white/80 leading-relaxed text-[11px] sm:text-xs md:text-sm">
               تنفرد ولاية الوادي بنظام فلاحي وتراثي فريد هو &quot;الغيطان&quot; (حفر الكثبان لغرس النخيل لتشرب جذورها مباشرة من المياه الجوفية دون سقي)، وهو ما استلهمنا منه تصميم وروح منصات &quot;وادنا&quot;.
             </span>
           </div>

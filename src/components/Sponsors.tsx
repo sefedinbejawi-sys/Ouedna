@@ -25,25 +25,25 @@ export const Sponsors: React.FC<SponsorsProps> = ({ onPartnerClick }) => {
   };
 
   return (
-    <section id="sponsors" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-[#120B06] border-t border-[#E5A93C]/10 overflow-hidden">
+    <section id="sponsors" className="relative py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-[#120B06] border-t border-[#E5A93C]/10 overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#241309] border border-[#E5A93C]/25 text-[#FDE68A] text-xs font-semibold mb-3">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-[#241309] border border-[#E5A93C]/25 text-[#FDE68A] text-xs font-semibold mb-3">
             <Handshake className="w-3.5 h-3.5 text-[#F59E0B]" />
             <span>شركاء التنمية والنجاح</span>
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
+          <h3 className="text-xl sm:text-3xl font-extrabold text-white mb-2 sm:mb-3">
             تحت رعاية ومرافقة هيئات ومؤسسات <span className="text-[#FBBF24]">ولاية الوادي</span>
           </h3>
 
-          <p className="text-sm text-white/65">
+          <p className="text-xs sm:text-sm text-white/65">
             نعمل جنباً إلى جنب مع الفاعلين الاقتصاديين، السياحيين والأكاديميين لترقية وتطوير الخدمات الرقمية في وادي سوف.
           </p>
         </div>
 
         {/* Partners Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
           {SPONSORS.map((sponsor) => (
             <div
               key={sponsor.id}

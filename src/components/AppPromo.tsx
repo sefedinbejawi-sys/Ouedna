@@ -44,50 +44,50 @@ export const AppPromo: React.FC = () => {
   ];
 
   return (
-    <section id="app-promo" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#170E08] border-t border-[#E5A93C]/15 overflow-hidden">
+    <section id="app-promo" className="relative py-16 sm:py-24 px-3 sm:px-6 lg:px-8 bg-[#170E08] border-t border-[#E5A93C]/15 overflow-hidden">
       {/* Background Decorative Circles */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-80 h-80 bg-[#EA580C]/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/3 right-0 w-80 h-80 bg-[#F59E0B]/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Features & Download Buttons */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-right">
             <div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2A160C] border border-[#F59E0B]/30 text-[#FDE68A] text-xs font-semibold mb-4">
                 <Smartphone className="w-3.5 h-3.5 text-[#F59E0B]" />
                 <span>تطبيق وادنا الذكي قريباً على أندرويد و iOS</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
                 كل خدمات وادي سوف.. <br />
                 <span className="bg-gradient-to-r from-[#FDE68A] via-[#F59E0B] to-[#EA580C] bg-clip-text text-transparent">
                   في راحة يدك بضغطة زر
                 </span>
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-white/70 leading-relaxed max-w-xl">
+              <p className="mt-3 sm:mt-4 text-xs sm:text-base text-white/70 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 حمّل تطبيق &quot;وادنا&quot; وتمتع بتجربة استثنائية لمتابعة أسعار التمور وسوق السيارات، وحجز رحلات السفاري والمخيمات بين رمال الكثبان الذهبية حتى في غياب شبكة الإنترنت.
               </p>
             </div>
 
             {/* Features 2x2 Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-right">
               {features.map((item, idx) => {
                 const IconComponent = item.icon;
                 return (
                   <div 
                     key={idx}
-                    className="p-4 rounded-2xl bg-[#1F1209]/80 border border-white/5 hover:border-[#F59E0B]/30 transition-all group"
+                    className="p-3.5 sm:p-4 rounded-2xl bg-[#1F1209]/80 border border-white/5 hover:border-[#F59E0B]/30 transition-all group"
                   >
-                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${item.gradient} p-2 flex items-center justify-center text-white mb-3 shadow-md`}>
-                      <IconComponent className="w-5 h-5" />
+                    <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br ${item.gradient} p-2 flex items-center justify-center text-white mb-2.5 shadow-md`}>
+                      <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <h4 className="text-sm font-bold text-white group-hover:text-[#FBBF24] transition-colors mb-1">
+                    <h4 className="text-xs sm:text-sm font-bold text-white group-hover:text-[#FBBF24] transition-colors mb-1">
                       {item.title}
                     </h4>
-                    <p className="text-xs text-white/60 leading-relaxed">
+                    <p className="text-[11px] sm:text-xs text-white/60 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
@@ -96,23 +96,23 @@ export const AppPromo: React.FC = () => {
             </div>
 
             {/* App Store / Google Play Buttons */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
               <a
                 href="#download-android"
                 onClick={(e) => {
                   e.preventDefault();
                   alert('التطبيق قيد الإطلاق الرسمي على متجر Google Play! يمكنك تصفح المنصة مباشرة عبر المتصفح.');
                 }}
-                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-black/80 hover:bg-black border border-white/15 text-white transition-all hover:scale-[1.02] shadow-lg shadow-black/40"
+                className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-black/80 hover:bg-black border border-white/15 text-white transition-all hover:scale-[1.02] shadow-lg shadow-black/40"
               >
-                <div className="w-7 h-7 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current text-[#34D399]">
+                <div className="w-6 h-6 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-[#34D399]">
                     <path d="M3.609 1.814L13.792 12 3.61 22.186a1.99 1.99 0 0 1-.61-.913V2.727c.18-.362.39-.681.61-.913zm11.235 11.238l2.257 2.257-11.479 6.626 9.222-8.883zm0-2.104L5.622 2.065l11.48 6.627-2.258 2.256zm1.458 1.052l3.411 1.97a1.442 1.442 0 0 1 0 2.496l-3.411 1.97-2.008-2.008 2.008-2.028z"/>
                   </svg>
                 </div>
                 <div className="text-right">
-                  <div className="text-[10px] text-white/60 leading-tight">متاح قريباً على</div>
-                  <div className="text-sm font-bold font-sans">Google Play</div>
+                  <div className="text-[9px] text-white/60 leading-tight">متاح قريباً على</div>
+                  <div className="text-xs font-bold font-sans">Google Play</div>
                 </div>
               </a>
 
@@ -122,16 +122,16 @@ export const AppPromo: React.FC = () => {
                   e.preventDefault();
                   alert('التطبيق قيد المراجعة في متجر App Store! منصة وادنا متوافقة بالكامل مع هواتف الآيفون.');
                 }}
-                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-black/80 hover:bg-black border border-white/15 text-white transition-all hover:scale-[1.02] shadow-lg shadow-black/40"
+                className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-black/80 hover:bg-black border border-white/15 text-white transition-all hover:scale-[1.02] shadow-lg shadow-black/40"
               >
-                <div className="w-7 h-7 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current text-white">
+                <div className="w-6 h-6 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-white">
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 .6-2.65 1.35-.58.66-1.09 1.73-.95 2.76 1 .08 2.05-.51 2.68-1.26z"/>
                   </svg>
                 </div>
                 <div className="text-right">
-                  <div className="text-[10px] text-white/60 leading-tight">تحميل من متجر</div>
-                  <div className="text-sm font-bold font-sans">App Store</div>
+                  <div className="text-[9px] text-white/60 leading-tight">تحميل من متجر</div>
+                  <div className="text-xs font-bold font-sans">App Store</div>
                 </div>
               </a>
 
@@ -139,10 +139,10 @@ export const AppPromo: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setShowQrModal(true)}
-                className="flex items-center gap-2 px-4 py-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-semibold transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-semibold transition-colors cursor-pointer"
               >
-                <QrCode className="w-4 h-4 text-[#F59E0B]" />
-                <span>مسح الرمز (QR)</span>
+                <QrCode className="w-3.5 h-3.5 text-[#F59E0B]" />
+                <span>مسح (QR)</span>
               </button>
             </div>
           </div>

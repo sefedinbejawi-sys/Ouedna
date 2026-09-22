@@ -24,12 +24,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
   };
 
   return (
-    <footer className="relative bg-[#0E0704] text-white/80 border-t border-[#E5A93C]/20 pt-16 pb-12 overflow-hidden">
+    <footer className="relative bg-[#0E0704] text-white/80 border-t border-[#E5A93C]/20 pt-12 sm:pt-16 pb-8 sm:pb-12 overflow-hidden">
       {/* Decorative Golden Accent Top Line */}
       <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#F59E0B] to-transparent opacity-60" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 pb-10 sm:pb-12 border-b border-white/10">
           
           {/* Col 1: Brand & Heritage */}
           <div className="lg:col-span-4 space-y-4">
