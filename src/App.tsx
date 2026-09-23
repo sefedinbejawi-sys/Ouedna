@@ -7,16 +7,12 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { DesertHero } from './components/DesertHero';
 import { EcosystemGrid } from './components/EcosystemGrid';
-import { AppPromo } from './components/AppPromo';
-import { Sponsors } from './components/Sponsors';
 import { Footer } from './components/Footer';
 import { ServiceDetailModal } from './components/ServiceDetailModal';
-import { PartnerModal } from './components/PartnerModal';
 import { SERVICES_DATA } from './data/mockData';
 import { ServiceCard } from './types';
 
 export default function App() {
-  const [isPartnerOpen, setIsPartnerOpen] = useState(false);
   const [selectedService, setSelectedService] = useState<ServiceCard | null>(null);
 
   const handleSelectServiceById = (serviceId: string) => {
@@ -47,7 +43,7 @@ export default function App() {
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        {/* 1. Hero Section with Slow-Moving Sunset & Dunes Parallax Artwork */}
+        {/* 1. Hero Section with Sunset & Dunes Parallax Artwork + Integrated Search */}
         <DesertHero 
           onSelectService={handleSelectServiceById}
         />
@@ -56,30 +52,17 @@ export default function App() {
         <EcosystemGrid 
           onSelectServiceModal={(service) => setSelectedService(service)}
         />
-
-        {/* 3. Mobile App Promo with Gradient Sunset Icons & Phone Mockup */}
-        <AppPromo />
-
-        {/* 4. Official Sponsors & Local Partners */}
-        <Sponsors 
-          onPartnerClick={() => setIsPartnerOpen(true)}
-        />
       </main>
 
-      {/* 5. Clean & Heritage-Rich Footer */}
+      {/* 3. Clean & Heritage-Rich Footer */}
       <Footer 
         onNavigateSection={handleNavigateSection}
       />
 
-      {/* Interactive Modals */}
+      {/* Interactive Service Detail Modal */}
       <ServiceDetailModal 
         service={selectedService}
         onClose={() => setSelectedService(null)}
-      />
-
-      <PartnerModal 
-        isOpen={isPartnerOpen}
-        onClose={() => setIsPartnerOpen(false)}
       />
     </div>
   );

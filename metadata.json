@@ -1,6 +1,6 @@
 {
   "name": "وادنا - المنصة الذكية لولاية الوادي",
-  "description": "البوابة الرقمية الموحدة لولاية الوادي (وادي سوف): سوق الوادي، دليل سوف 360، والخدمات التعليمية.",
+  "description": "البوابة الرقمية الموحدة لولاية الوادي (وادي سوف): سوق الوادي (souq.myeloued.com) ومنصة وادنا السياحية (ouedna.myeloued.com).",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
