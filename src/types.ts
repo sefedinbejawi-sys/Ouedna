@@ -1,13 +1,18 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 export interface ServiceCard {
   id: string;
   subdomain: string;
   name: string;
   badge: string;
   description: string;
-  theme: 'gold' | 'emerald' | 'amber' | 'desert';
+  theme: 'gold' | 'desert';
   icon: string;
   highlights: string[];
-  metrics: string;
+  status: 'active' | 'upcoming';
   ctaText: string;
   link: string;
   gradientBg: string;
@@ -21,19 +26,6 @@ export interface SearchResult {
   category: string;
   subdomain: string;
   location: string;
-  date: string;
   badge?: string;
-  url?: string;
-}
-
-export interface Sponsor {
-  id: string;
-  name: string;
-  subtitle: string;
-  category: string;
-}
-
-export interface Municipality {
-  name: string;
-  code: string;
+  url: string;
 }
