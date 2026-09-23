@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# Sitemap الرسمي الوحيد للبوابة
 Sitemap: https://myeloued.com/sitemap.xml
