@@ -7,6 +7,19 @@
  * ليركز فقط على بوابات المنظومة: الرئيسية، سوق الوادي، وسياحة وادنا.
  */
 
+import React from 'react';
+
+export default function Navbar() {
+  return (
+    <nav className="absolute top-0 w-full z-50 bg-transparent border-b border-white/20">
+      <div className="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
+        <h1 className="text-3xl font-extrabold text-white drop-shadow-md">وادنا</h1>
+        <a href="mailto:contact@myeloued.com" className="text-sm text-white/90 hover:text-amber-300 font-bold transition-colors drop-shadow-sm">تواصل معنا</a>
+      </div>
+    </nav>
+  );
+}
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 
